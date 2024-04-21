@@ -1,0 +1,754 @@
+2024-04-21 15:31:16,301 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-21 15:31:16,303 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 3864 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-21 15:31:16,305 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-21 15:31:16,306 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-21 15:31:16,368 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-21 15:31:16,369 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-21 15:31:17,320 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-21 15:31:17,419 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 84 ms. Found 5 JPA repository interfaces.
+2024-04-21 15:31:18,583 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-21 15:31:18,598 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-21 15:31:18,599 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-21 15:31:18,600 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-21 15:31:18,703 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-21 15:31:18,703 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2333 ms
+2024-04-21 15:31:18,898 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-21 15:31:18,959 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-21 15:31:19,196 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-21 15:31:19,311 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-21 15:31:19,689 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-21 15:31:19,711 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-21 15:31:20,771 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-21 15:31:20,780 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 15:31:21,258 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-21 15:31:21,593 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-21 15:31:21,617 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-21 15:31:21,829 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@20075365, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f8e96e7, org.springframework.security.web.context.SecurityContextPersistenceFilter@6121712c, org.springframework.security.web.header.HeaderWriterFilter@224a090, org.springframework.security.web.authentication.logout.LogoutFilter@5498569e, com.blog.security.JwtAuthenticationFilter@3457cf73, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45df5a80, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2439fd6b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7998697e, org.springframework.security.web.session.SessionManagementFilter@83da99e, org.springframework.security.web.access.ExceptionTranslationFilter@50c9d3b8, org.springframework.security.web.access.intercept.AuthorizationFilter@2eae3f15]
+2024-04-21 15:31:21,866 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-21 15:31:22,766 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-21 15:31:22,800 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-21 15:31:22,855 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-21 15:31:22,875 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 7.222 seconds (JVM running for 7.81)
+2024-04-21 15:31:44,593 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 15:31:44,595 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-04-21 15:31:44,600 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 5 ms
+2024-04-21 15:31:44,626 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/categories/
+2024-04-21 15:31:44,637 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:31:44,650 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-2] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:31:44,654 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-2] Secured GET /api/v1/categories/
+2024-04-21 15:31:44,695 INFO com.blog.services.impl.CategoryServiceImpl [http-nio-8080-exec-2] Retrieving all categories
+2024-04-21 15:31:44,922 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Cleared SecurityContextHolder to complete request
+2024-04-21 15:33:52,780 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-5] Securing GET /api/v1/categories/2
+2024-04-21 15:33:52,781 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-5] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:33:52,784 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-5] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:33:52,784 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-5] Secured GET /api/v1/categories/2
+2024-04-21 15:33:52,803 INFO com.blog.services.impl.CategoryServiceImpl [http-nio-8080-exec-5] Retrieving category with ID 2
+2024-04-21 15:33:52,826 DEBUG com.blog.services.impl.CategoryServiceImpl [http-nio-8080-exec-5] Converting Category to CategoryDto
+2024-04-21 15:33:52,888 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-5] Cleared SecurityContextHolder to complete request
+2024-04-21 15:40:37,199 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 15:40:37,203 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-04-21 15:40:37,214 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-21 15:40:41,552 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-21 15:40:41,561 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 16700 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-21 15:40:41,561 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-21 15:40:41,562 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-21 15:40:41,618 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-21 15:40:41,618 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-21 15:40:42,537 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-21 15:40:42,651 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 101 ms. Found 5 JPA repository interfaces.
+2024-04-21 15:40:43,762 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-21 15:40:43,785 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-21 15:40:43,786 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-21 15:40:43,787 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-21 15:40:43,900 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-21 15:40:43,900 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2281 ms
+2024-04-21 15:40:44,094 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-21 15:40:44,159 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-21 15:40:44,405 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-21 15:40:44,557 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-21 15:40:45,134 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-21 15:40:45,159 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-21 15:40:46,210 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-21 15:40:46,219 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 15:40:46,687 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-21 15:40:47,064 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-21 15:40:47,090 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-21 15:40:47,228 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7a88c68a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b4cbfb9, org.springframework.security.web.context.SecurityContextPersistenceFilter@441ecc1f, org.springframework.security.web.header.HeaderWriterFilter@10e89afc, org.springframework.security.web.authentication.logout.LogoutFilter@6ec2e7bb, com.blog.security.JwtAuthenticationFilter@21084e9e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c3c6957, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ffd6a2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45161d71, org.springframework.security.web.session.SessionManagementFilter@20651594, org.springframework.security.web.access.ExceptionTranslationFilter@8949a0a, org.springframework.security.web.access.intercept.AuthorizationFilter@33685bb1]
+2024-04-21 15:40:47,251 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-21 15:40:47,695 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-21 15:40:47,713 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-21 15:40:47,744 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-21 15:40:47,756 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 6.794 seconds (JVM running for 7.409)
+2024-04-21 15:40:58,563 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 15:40:58,564 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-04-21 15:40:58,564 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 0 ms
+2024-04-21 15:40:58,572 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/categories/2
+2024-04-21 15:40:58,575 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:40:58,581 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-2] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:40:58,582 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-2] Secured GET /api/v1/categories/2
+2024-04-21 15:40:58,604 INFO com.blog.services.impl.CategoryServiceImpl [http-nio-8080-exec-2] Retrieving category with ID 2
+2024-04-21 15:40:58,624 DEBUG com.blog.services.impl.CategoryServiceImpl [http-nio-8080-exec-2] Converting Category to CategoryDto
+2024-04-21 15:40:58,700 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Cleared SecurityContextHolder to complete request
+2024-04-21 15:41:04,521 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/categories/4
+2024-04-21 15:41:04,522 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:41:04,522 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-3] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:41:04,523 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-3] Secured GET /api/v1/categories/4
+2024-04-21 15:41:04,523 INFO com.blog.services.impl.CategoryServiceImpl [http-nio-8080-exec-3] Retrieving category with ID 4
+2024-04-21 15:41:04,529 ERROR com.blog.services.impl.CategoryServiceImpl [http-nio-8080-exec-3] Category not found with id 4 
+2024-04-21 15:41:04,534 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Cleared SecurityContextHolder to complete request
+2024-04-21 15:48:56,450 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/posts/2
+2024-04-21 15:48:56,451 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-6] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:48:56,453 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-6] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:48:56,454 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-6] Secured GET /api/posts/2
+2024-04-21 15:48:56,459 WARN org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-6] No mapping for GET /api/posts/2
+2024-04-21 15:48:56,461 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-6] Cleared SecurityContextHolder to complete request
+2024-04-21 15:48:56,465 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-6] Securing GET /error
+2024-04-21 15:48:56,466 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-6] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:48:56,467 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-6] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:48:56,467 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-6] Secured GET /error
+2024-04-21 15:48:56,490 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-6] Cleared SecurityContextHolder to complete request
+2024-04-21 15:49:01,411 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-7] Securing GET /api/posts/1
+2024-04-21 15:49:01,412 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-7] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:49:01,414 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-7] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:49:01,414 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-7] Secured GET /api/posts/1
+2024-04-21 15:49:01,415 WARN org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-7] No mapping for GET /api/posts/1
+2024-04-21 15:49:01,417 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-7] Cleared SecurityContextHolder to complete request
+2024-04-21 15:49:01,419 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-7] Securing GET /error
+2024-04-21 15:49:01,420 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-7] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:49:01,420 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-7] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:49:01,421 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-7] Secured GET /error
+2024-04-21 15:49:01,427 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-7] Cleared SecurityContextHolder to complete request
+2024-04-21 15:49:17,874 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/posts/1
+2024-04-21 15:49:17,876 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-8] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:49:17,877 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-8] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:49:17,877 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-8] Secured GET /api/v1/posts/1
+2024-04-21 15:49:17,983 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-8] Cleared SecurityContextHolder to complete request
+2024-04-21 15:57:49,117 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 15:57:49,120 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-04-21 15:57:49,130 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-21 15:58:04,290 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-21 15:58:04,293 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 2060 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-21 15:58:04,294 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-21 15:58:04,295 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-21 15:58:04,361 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-21 15:58:04,361 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-21 15:58:05,250 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-21 15:58:05,362 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 95 ms. Found 5 JPA repository interfaces.
+2024-04-21 15:58:06,382 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-21 15:58:06,401 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-21 15:58:06,402 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-21 15:58:06,402 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-21 15:58:06,505 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-21 15:58:06,505 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2143 ms
+2024-04-21 15:58:06,916 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-21 15:58:07,007 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-21 15:58:07,296 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-21 15:58:07,451 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-21 15:58:07,820 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-21 15:58:07,839 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-21 15:58:08,899 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-21 15:58:08,908 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 15:58:09,426 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-21 15:58:09,800 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-21 15:58:09,823 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-21 15:58:09,927 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2aac9706, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a7d89b1, org.springframework.security.web.context.SecurityContextPersistenceFilter@5fa9eb5a, org.springframework.security.web.header.HeaderWriterFilter@8949a0a, org.springframework.security.web.authentication.logout.LogoutFilter@5f050c0c, com.blog.security.JwtAuthenticationFilter@21084e9e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@441ecc1f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c5fb8bd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a88c68a, org.springframework.security.web.session.SessionManagementFilter@5bfd7e20, org.springframework.security.web.access.ExceptionTranslationFilter@22e1198f, org.springframework.security.web.access.intercept.AuthorizationFilter@5b676ac8]
+2024-04-21 15:58:09,954 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-21 15:58:10,400 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-21 15:58:10,417 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-21 15:58:10,452 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-21 15:58:10,464 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 6.704 seconds (JVM running for 7.344)
+2024-04-21 15:58:30,717 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 15:58:30,718 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-04-21 15:58:30,722 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 3 ms
+2024-04-21 15:58:30,748 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/category/1/posts
+2024-04-21 15:58:30,759 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:58:30,771 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-1] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:58:30,775 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-1] Secured GET /api/v1/category/1/posts
+2024-04-21 15:58:30,831 INFO com.blog.services.impl.PostServiceImpl [http-nio-8080-exec-1] Getting posts of category with id %d
+2024-04-21 15:58:31,172 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Cleared SecurityContextHolder to complete request
+2024-04-21 15:59:12,449 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 15:59:12,453 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-04-21 15:59:12,461 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-21 15:59:23,001 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-21 15:59:23,010 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 18712 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-21 15:59:23,011 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-21 15:59:23,012 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-21 15:59:23,065 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-21 15:59:23,066 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-21 15:59:23,865 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-21 15:59:23,968 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 92 ms. Found 5 JPA repository interfaces.
+2024-04-21 15:59:25,043 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-21 15:59:25,059 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-21 15:59:25,060 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-21 15:59:25,060 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-21 15:59:25,170 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-21 15:59:25,170 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2104 ms
+2024-04-21 15:59:25,376 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-21 15:59:25,440 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-21 15:59:25,660 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-21 15:59:25,755 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-21 15:59:26,090 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-21 15:59:26,107 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-21 15:59:26,990 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-21 15:59:26,998 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 15:59:27,490 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-21 15:59:27,832 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-21 15:59:27,853 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-21 15:59:27,985 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13c0853, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c0ce692, org.springframework.security.web.context.SecurityContextPersistenceFilter@2bf3f58b, org.springframework.security.web.header.HeaderWriterFilter@2439fd6b, org.springframework.security.web.authentication.logout.LogoutFilter@2b3c24c1, com.blog.security.JwtAuthenticationFilter@4f6de6f7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@628d2c54, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18489dc1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1726edea, org.springframework.security.web.session.SessionManagementFilter@53883e42, org.springframework.security.web.access.ExceptionTranslationFilter@4b555cf, org.springframework.security.web.access.intercept.AuthorizationFilter@27c14b85]
+2024-04-21 15:59:28,011 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-21 15:59:28,435 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-21 15:59:28,452 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-21 15:59:28,481 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-21 15:59:28,494 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 6.029 seconds (JVM running for 6.654)
+2024-04-21 15:59:36,765 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 15:59:36,766 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-04-21 15:59:36,767 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2024-04-21 15:59:36,779 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/category/1/posts
+2024-04-21 15:59:36,784 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:59:36,789 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-2] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:59:36,792 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-2] Secured GET /api/v1/category/1/posts
+2024-04-21 15:59:36,816 INFO com.blog.services.impl.PostServiceImpl [http-nio-8080-exec-2] Getting posts of category with id 1
+2024-04-21 15:59:36,967 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Cleared SecurityContextHolder to complete request
+2024-04-21 15:59:57,055 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/user/5/posts
+2024-04-21 15:59:57,056 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 15:59:57,057 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-3] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 15:59:57,058 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-3] Secured GET /api/v1/user/5/posts
+2024-04-21 15:59:57,060 INFO com.blog.services.impl.PostServiceImpl [http-nio-8080-exec-3] Getting posts of user with id 5
+2024-04-21 15:59:57,092 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Cleared SecurityContextHolder to complete request
+2024-04-21 16:01:40,503 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/user/1/posts
+2024-04-21 16:01:40,503 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-6] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 16:01:40,504 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-6] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 16:01:40,504 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-6] Secured GET /api/v1/user/1/posts
+2024-04-21 16:01:40,506 INFO com.blog.services.impl.PostServiceImpl [http-nio-8080-exec-6] Getting posts of user with id 1
+2024-04-21 16:01:40,517 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-6] Cleared SecurityContextHolder to complete request
+2024-04-21 16:02:07,097 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-7] Securing GET /api/v1/user/2/posts
+2024-04-21 16:02:07,098 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-7] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 16:02:07,100 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-7] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 16:02:07,101 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-7] Secured GET /api/v1/user/2/posts
+2024-04-21 16:02:07,104 INFO com.blog.services.impl.PostServiceImpl [http-nio-8080-exec-7] Getting posts of user with id 2
+2024-04-21 16:02:07,136 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-7] Cleared SecurityContextHolder to complete request
+2024-04-21 16:08:15,706 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 16:08:15,709 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-04-21 16:08:15,720 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-21 16:08:26,452 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-21 16:08:26,456 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 18480 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-21 16:08:26,457 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-21 16:08:26,458 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-21 16:08:26,533 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-21 16:08:26,534 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-21 16:08:27,501 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-21 16:08:27,629 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 112 ms. Found 5 JPA repository interfaces.
+2024-04-21 16:08:29,357 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-21 16:08:29,379 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-21 16:08:29,380 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-21 16:08:29,382 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-21 16:08:29,506 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-21 16:08:29,506 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2971 ms
+2024-04-21 16:08:29,741 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-21 16:08:29,810 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-21 16:08:30,029 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-21 16:08:30,126 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-21 16:08:30,507 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-21 16:08:30,525 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-21 16:08:31,375 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-21 16:08:31,383 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 16:08:31,854 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-21 16:08:32,206 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-21 16:08:32,228 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-21 16:08:32,330 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6d3096a0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1507a8bb, org.springframework.security.web.context.SecurityContextPersistenceFilter@66c4bfbf, org.springframework.security.web.header.HeaderWriterFilter@4e10fe6e, org.springframework.security.web.authentication.logout.LogoutFilter@a66f234, com.blog.security.JwtAuthenticationFilter@df42751, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@729502df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41a2ccab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@200ea3ea, org.springframework.security.web.session.SessionManagementFilter@59a44705, org.springframework.security.web.access.ExceptionTranslationFilter@605a6afa, org.springframework.security.web.access.intercept.AuthorizationFilter@176df441]
+2024-04-21 16:08:32,368 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-21 16:08:32,802 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-21 16:08:32,820 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-21 16:08:32,860 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-21 16:08:32,874 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 7.108 seconds (JVM running for 7.787)
+2024-04-21 16:08:37,502 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 16:08:37,502 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-04-21 16:08:37,503 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 0 ms
+2024-04-21 16:08:37,514 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/user/2/posts
+2024-04-21 16:08:37,520 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 16:08:37,527 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-1] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 16:08:37,529 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-1] Secured GET /api/v1/user/2/posts
+2024-04-21 16:08:37,561 INFO com.blog.services.impl.PostServiceImpl [http-nio-8080-exec-1] Getting posts of user with id 2
+2024-04-21 16:08:37,581 ERROR com.blog.services.impl.PostServiceImpl [http-nio-8080-exec-1] User not found with id 2
+2024-04-21 16:08:37,639 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Cleared SecurityContextHolder to complete request
+2024-04-21 16:15:13,608 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 16:15:13,611 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-04-21 16:15:13,623 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-21 16:15:25,009 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-21 16:15:25,018 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 19116 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-21 16:15:25,019 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-21 16:15:25,022 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-21 16:15:25,104 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-21 16:15:25,105 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-21 16:15:25,974 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-21 16:15:26,082 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 93 ms. Found 5 JPA repository interfaces.
+2024-04-21 16:15:27,330 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-21 16:15:27,346 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-21 16:15:27,347 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-21 16:15:27,348 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-21 16:15:27,473 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-21 16:15:27,473 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2367 ms
+2024-04-21 16:15:27,703 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-21 16:15:27,774 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-21 16:15:28,124 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-21 16:15:28,299 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-21 16:15:28,858 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-21 16:15:28,881 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-21 16:15:29,983 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-21 16:15:29,990 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 16:15:30,462 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-21 16:15:30,808 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-21 16:15:30,831 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-21 16:15:30,960 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13c0853, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c0ce692, org.springframework.security.web.context.SecurityContextPersistenceFilter@2bf3f58b, org.springframework.security.web.header.HeaderWriterFilter@2439fd6b, org.springframework.security.web.authentication.logout.LogoutFilter@2b3c24c1, com.blog.security.JwtAuthenticationFilter@26b155d5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@628d2c54, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18489dc1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1726edea, org.springframework.security.web.session.SessionManagementFilter@53883e42, org.springframework.security.web.access.ExceptionTranslationFilter@4b555cf, org.springframework.security.web.access.intercept.AuthorizationFilter@27c14b85]
+2024-04-21 16:15:30,987 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-21 16:15:31,472 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-21 16:15:31,489 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-21 16:15:31,521 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-21 16:15:31,535 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 7.129 seconds (JVM running for 7.81)
+2024-04-21 16:15:41,138 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 16:15:41,139 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-04-21 16:15:41,143 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 3 ms
+2024-04-21 16:15:41,168 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/users/2
+2024-04-21 16:15:41,179 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 16:15:41,188 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-2] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 16:15:41,192 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-2] Secured GET /api/users/2
+2024-04-21 16:15:41,210 WARN org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-2] No mapping for GET /api/users/2
+2024-04-21 16:15:41,215 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Cleared SecurityContextHolder to complete request
+2024-04-21 16:15:41,221 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-2] Securing GET /error
+2024-04-21 16:15:41,221 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 16:15:41,222 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-2] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 16:15:41,223 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-2] Secured GET /error
+2024-04-21 16:15:41,398 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Cleared SecurityContextHolder to complete request
+2024-04-21 16:15:47,912 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/users/2
+2024-04-21 16:15:47,914 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 16:15:47,915 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-3] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 16:15:47,916 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-3] Secured GET /api/v1/users/2
+2024-04-21 16:15:47,954 INFO com.blog.services.impl.UserServiceImpl [http-nio-8080-exec-3] Retrieving user with ID: 2
+2024-04-21 16:15:48,014 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Cleared SecurityContextHolder to complete request
+2024-04-21 16:16:48,527 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 16:16:48,530 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-04-21 16:16:48,539 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-21 16:16:59,565 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-21 16:16:59,568 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 9412 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-21 16:16:59,568 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-21 16:16:59,570 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-21 16:16:59,630 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-21 16:16:59,630 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-21 16:17:00,582 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-21 16:17:00,713 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 114 ms. Found 5 JPA repository interfaces.
+2024-04-21 16:17:01,801 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-21 16:17:01,815 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-21 16:17:01,816 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-21 16:17:01,816 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-21 16:17:01,927 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-21 16:17:01,928 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2297 ms
+2024-04-21 16:17:02,152 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-21 16:17:02,215 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-21 16:17:02,477 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-21 16:17:02,596 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-21 16:17:02,934 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-21 16:17:02,951 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-21 16:17:03,811 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-21 16:17:03,818 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 16:17:04,339 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-21 16:17:04,739 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-21 16:17:04,760 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-21 16:17:04,886 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3835808f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19a5178, org.springframework.security.web.context.SecurityContextPersistenceFilter@978537a, org.springframework.security.web.header.HeaderWriterFilter@56f6f194, org.springframework.security.web.authentication.logout.LogoutFilter@6f1582f1, com.blog.security.JwtAuthenticationFilter@21084e9e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50baa66c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19e3255, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@80e1edb, org.springframework.security.web.session.SessionManagementFilter@e1f1481, org.springframework.security.web.access.ExceptionTranslationFilter@25bf6b57, org.springframework.security.web.access.intercept.AuthorizationFilter@235358a1]
+2024-04-21 16:17:04,922 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-21 16:17:05,347 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-21 16:17:05,363 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-21 16:17:05,392 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-21 16:17:05,406 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 6.444 seconds (JVM running for 7.049)
+2024-04-21 16:17:09,671 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 16:17:09,673 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-04-21 16:17:09,675 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2024-04-21 16:17:09,683 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/users/2
+2024-04-21 16:17:09,687 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 16:17:09,694 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-1] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 16:17:09,696 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-1] Secured GET /api/v1/users/2
+2024-04-21 16:17:09,730 INFO com.blog.services.impl.UserServiceImpl [http-nio-8080-exec-1] Retrieving user with ID: 2
+2024-04-21 16:17:09,746 ERROR com.blog.services.impl.UserServiceImpl [http-nio-8080-exec-1] User not found with id 2
+2024-04-21 16:17:09,803 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Cleared SecurityContextHolder to complete request
+2024-04-21 16:22:06,749 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 16:22:06,752 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-04-21 16:22:06,761 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-21 16:22:18,193 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-21 16:22:18,199 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 12416 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-21 16:22:18,200 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-21 16:22:18,201 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-21 16:22:18,256 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-21 16:22:18,257 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-21 16:22:19,329 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-21 16:22:19,471 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 122 ms. Found 5 JPA repository interfaces.
+2024-04-21 16:22:20,569 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-21 16:22:20,584 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-21 16:22:20,585 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-21 16:22:20,586 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-21 16:22:20,679 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-21 16:22:20,680 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2422 ms
+2024-04-21 16:22:20,922 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-21 16:22:20,985 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-21 16:22:21,190 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-21 16:22:21,280 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-21 16:22:21,598 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-21 16:22:21,620 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-21 16:22:22,455 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-21 16:22:22,463 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 16:22:22,932 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-21 16:22:23,322 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-21 16:22:23,339 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-21 16:22:23,478 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@68491d5c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2519dc1b, org.springframework.security.web.context.SecurityContextPersistenceFilter@2db3e1ea, org.springframework.security.web.header.HeaderWriterFilter@7dd5b7eb, org.springframework.security.web.authentication.logout.LogoutFilter@3bd1f26c, com.blog.security.JwtAuthenticationFilter@756359e2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23029728, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c32d11a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@762ae489, org.springframework.security.web.session.SessionManagementFilter@8ec4bad, org.springframework.security.web.access.ExceptionTranslationFilter@5e7d289a, org.springframework.security.web.access.intercept.AuthorizationFilter@4451299f]
+2024-04-21 16:22:23,500 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-21 16:22:23,951 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-21 16:22:23,968 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-21 16:22:24,003 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-21 16:22:24,020 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 6.382 seconds (JVM running for 7.098)
+2024-04-21 16:22:28,410 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 16:22:28,411 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-04-21 16:22:28,412 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2024-04-21 16:22:28,420 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/users/2
+2024-04-21 16:22:28,423 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 16:22:28,428 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-1] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 16:22:28,431 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-1] Secured GET /api/v1/users/2
+2024-04-21 16:22:28,463 INFO com.blog.services.impl.UserServiceImpl [http-nio-8080-exec-1] Retrieving user with ID: 2
+2024-04-21 16:22:28,483 ERROR com.blog.services.impl.UserServiceImpl [http-nio-8080-exec-1] User not found with id 2
+2024-04-21 16:22:28,546 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Cleared SecurityContextHolder to complete request
+2024-04-21 16:22:41,673 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/users/5
+2024-04-21 16:22:41,674 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 16:22:41,674 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-3] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 16:22:41,675 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-3] Secured GET /api/v1/users/5
+2024-04-21 16:22:41,676 INFO com.blog.services.impl.UserServiceImpl [http-nio-8080-exec-3] Retrieving user with ID: 5
+2024-04-21 16:22:41,737 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Cleared SecurityContextHolder to complete request
+2024-04-21 16:42:45,219 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 16:42:45,223 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-04-21 16:42:45,237 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-21 16:43:15,223 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-21 16:43:15,226 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 21492 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-21 16:43:15,227 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-21 16:43:15,229 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-21 16:43:15,297 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-21 16:43:15,297 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-21 16:43:16,267 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-21 16:43:16,378 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 103 ms. Found 5 JPA repository interfaces.
+2024-04-21 16:43:17,491 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-21 16:43:17,507 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-21 16:43:17,508 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-21 16:43:17,508 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-21 16:43:17,622 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-21 16:43:17,623 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2322 ms
+2024-04-21 16:43:17,833 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-21 16:43:17,889 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-21 16:43:18,137 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-21 16:43:18,276 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-21 16:43:18,675 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-21 16:43:18,698 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-21 16:43:19,665 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-21 16:43:19,672 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 16:43:20,207 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-21 16:43:20,634 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-21 16:43:20,657 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-21 16:43:20,764 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1507a8bb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@200ea3ea, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d23500d, org.springframework.security.web.header.HeaderWriterFilter@6b0cba00, org.springframework.security.web.authentication.logout.LogoutFilter@3dea9f87, com.blog.security.JwtAuthenticationFilter@3e090bf9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41a2ccab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@258aa67, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49b16290, org.springframework.security.web.session.SessionManagementFilter@189ee8ee, org.springframework.security.web.access.ExceptionTranslationFilter@a0d3c3c, org.springframework.security.web.access.intercept.AuthorizationFilter@5960554]
+2024-04-21 16:43:20,796 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-21 16:43:21,214 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-21 16:43:21,232 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-21 16:43:21,267 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-21 16:43:21,281 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 6.622 seconds (JVM running for 7.329)
+2024-04-21 19:15:22,934 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m59s573ms569µs800ns).
+2024-04-21 21:02:21,619 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h4m27s821ms141µs400ns).
+2024-04-21 21:48:38,776 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m46s454ms15µs200ns).
+2024-04-21 22:13:13,786 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 22:13:13,787 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-04-21 22:13:13,808 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 21 ms
+2024-04-21 22:13:13,827 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/users/5
+2024-04-21 22:13:13,837 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:13:13,846 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-1] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:13:13,849 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-1] Secured GET /api/v1/users/5
+2024-04-21 22:13:13,944 INFO com.blog.services.impl.UserServiceImpl [http-nio-8080-exec-1] Retrieving user with ID: 5
+2024-04-21 22:13:14,292 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Cleared SecurityContextHolder to complete request
+2024-04-21 22:15:52,747 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-5] Securing POST /api/v1/users/
+2024-04-21 22:15:52,748 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-5] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:15:52,826 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-5] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:15:52,828 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-5] Cleared SecurityContextHolder to complete request
+2024-04-21 22:15:52,831 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-5] Securing POST /error
+2024-04-21 22:15:52,831 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-5] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:15:52,832 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-5] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:15:52,832 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-5] Secured POST /error
+2024-04-21 22:15:52,861 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-5] Cleared SecurityContextHolder to complete request
+2024-04-21 22:18:49,434 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-8] Securing POST /api/v1/auth/register
+2024-04-21 22:18:49,434 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-8] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:18:49,435 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-8] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:18:49,435 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-8] Secured POST /api/v1/auth/register
+2024-04-21 22:18:49,587 INFO com.blog.services.impl.UserServiceImpl [http-nio-8080-exec-8] Registering new user: Laalu
+2024-04-21 22:18:49,767 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-8] Cleared SecurityContextHolder to complete request
+2024-04-21 22:19:59,832 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-2] Securing POST /api/v1/auth/login
+2024-04-21 22:19:59,832 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:19:59,833 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-2] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:19:59,833 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-2] Secured POST /api/v1/auth/login
+2024-04-21 22:20:00,085 DEBUG org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider [http-nio-8080-exec-2] Authenticated user
+2024-04-21 22:20:00,106 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Cleared SecurityContextHolder to complete request
+2024-04-21 22:20:25,942 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-1] Securing POST /api/v1/users/
+2024-04-21 22:20:25,943 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:20:25,949 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-1] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:20:25,949 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Cleared SecurityContextHolder to complete request
+2024-04-21 22:20:25,951 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-1] Securing POST /error
+2024-04-21 22:20:25,951 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:20:25,951 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-1] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:20:25,953 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-1] Secured POST /error
+2024-04-21 22:20:25,957 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Cleared SecurityContextHolder to complete request
+2024-04-21 22:20:42,601 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-3] Securing POST /api/v1/users/
+2024-04-21 22:20:42,601 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:20:42,635 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-3] Secured POST /api/v1/users/
+2024-04-21 22:20:42,638 INFO com.blog.services.impl.UserServiceImpl [http-nio-8080-exec-3] Creating user: Laalu
+2024-04-21 22:20:42,672 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-3] SQL Error: 1062, SQLState: 23000
+2024-04-21 22:20:42,672 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-3] Duplicate entry 'laalu@dev.in' for key 'users.UK_6dotkott2kjsp8vw4d0m25fb7'
+2024-04-21 22:20:42,673 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl [http-nio-8080-exec-3] HHH000010: On release of batch it still contained JDBC statements
+2024-04-21 22:20:42,690 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Cleared SecurityContextHolder to complete request
+2024-04-21 22:20:42,693 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [users.UK_6dotkott2kjsp8vw4d0m25fb7]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'laalu@dev.in' for key 'users.UK_6dotkott2kjsp8vw4d0m25fb7'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3375)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3908)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3290)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2425)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at jdk.proxy3/jdk.proxy3.$Proxy120.save(Unknown Source)
+	at com.blog.services.impl.UserServiceImpl.createUser(UserServiceImpl.java:41)
+	at com.blog.controllers.UserController.createUser(UserController.java:36)
+	at com.blog.controllers.UserController$$FastClassBySpringCGLIB$$8bf039bd.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at com.blog.controllers.UserController$$EnhancerBySpringCGLIB$$c4913e.createUser(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1070)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilterInternal(AuthorizationFilter.java:73)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.blog.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:98)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-04-21 22:20:42,695 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-3] Securing POST /error
+2024-04-21 22:20:42,697 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:20:42,698 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-3] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:20:42,698 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-3] Secured POST /error
+2024-04-21 22:20:42,706 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-3] Cleared SecurityContextHolder to complete request
+2024-04-21 22:21:24,649 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-5] Securing POST /api/v1/users/
+2024-04-21 22:21:24,650 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-5] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:21:24,657 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-5] Secured POST /api/v1/users/
+2024-04-21 22:21:24,659 INFO com.blog.services.impl.UserServiceImpl [http-nio-8080-exec-5] Creating user: Divya
+2024-04-21 22:21:24,680 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-5] Cleared SecurityContextHolder to complete request
+2024-04-21 22:23:31,501 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 22:23:31,509 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-04-21 22:23:31,519 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-21 22:23:40,446 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-21 22:23:40,451 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 23744 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-21 22:23:40,451 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-21 22:23:40,453 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-21 22:23:40,530 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-21 22:23:40,532 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-21 22:23:41,909 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-21 22:23:42,042 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 120 ms. Found 5 JPA repository interfaces.
+2024-04-21 22:23:43,498 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-21 22:23:43,530 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-21 22:23:43,542 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-21 22:23:43,546 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-21 22:23:43,807 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-21 22:23:43,808 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 3275 ms
+2024-04-21 22:23:44,275 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-21 22:23:44,388 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-21 22:23:44,697 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-21 22:23:44,829 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-21 22:23:45,467 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-21 22:23:45,497 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-21 22:23:46,901 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-21 22:23:46,913 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-21 22:23:47,522 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-21 22:23:48,054 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-21 22:23:48,084 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-21 22:23:48,239 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4620957d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@651b08c7, org.springframework.security.web.context.SecurityContextPersistenceFilter@40eddcab, org.springframework.security.web.header.HeaderWriterFilter@354496f4, org.springframework.security.web.authentication.logout.LogoutFilter@11bfd7cb, com.blog.security.JwtAuthenticationFilter@436254c3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@478c9ab1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63d88270, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@364ba6a4, org.springframework.security.web.session.SessionManagementFilter@14cbfd62, org.springframework.security.web.access.ExceptionTranslationFilter@78fc731f, org.springframework.security.web.access.intercept.AuthorizationFilter@1f3785e3]
+2024-04-21 22:23:48,283 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-21 22:23:48,876 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-21 22:23:48,901 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-21 22:23:48,947 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-21 22:23:48,967 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 9.259 seconds (JVM running for 10.172)
+2024-04-21 22:24:22,185 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-21 22:24:22,186 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2024-04-21 22:24:22,189 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2024-04-21 22:24:22,206 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-2] Securing POST /api/v1/auth/login
+2024-04-21 22:24:22,212 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:24:22,219 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-2] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:24:22,221 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-2] Secured POST /api/v1/auth/login
+2024-04-21 22:24:22,628 DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider [http-nio-8080-exec-2] Failed to authenticate since password does not match stored value
+2024-04-21 22:24:22,668 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Cleared SecurityContextHolder to complete request
+2024-04-21 22:24:37,484 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-4] Securing POST /api/v1/auth/login
+2024-04-21 22:24:37,485 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-4] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:24:37,487 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-4] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:24:37,487 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-4] Secured POST /api/v1/auth/login
+2024-04-21 22:24:37,594 DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider [http-nio-8080-exec-4] Failed to authenticate since password does not match stored value
+2024-04-21 22:24:37,596 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-4] Cleared SecurityContextHolder to complete request
+2024-04-21 22:25:29,224 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-6] Securing POST /api/v1/auth/login
+2024-04-21 22:25:29,224 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-6] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:25:29,225 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-6] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:25:29,225 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-6] Secured POST /api/v1/auth/login
+2024-04-21 22:25:29,231 WARN org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder [http-nio-8080-exec-6] Encoded password does not look like BCrypt
+2024-04-21 22:25:29,232 DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider [http-nio-8080-exec-6] Failed to authenticate since password does not match stored value
+2024-04-21 22:25:29,237 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-6] Cleared SecurityContextHolder to complete request
+2024-04-21 22:25:34,677 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-8] Securing POST /api/v1/auth/login
+2024-04-21 22:25:34,677 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-8] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:25:34,678 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-8] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:25:34,678 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-8] Secured POST /api/v1/auth/login
+2024-04-21 22:25:34,683 WARN org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder [http-nio-8080-exec-8] Encoded password does not look like BCrypt
+2024-04-21 22:25:34,683 DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider [http-nio-8080-exec-8] Failed to authenticate since password does not match stored value
+2024-04-21 22:25:34,685 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-8] Cleared SecurityContextHolder to complete request
+2024-04-21 22:28:02,167 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-9] Securing POST /api/v1/auth/login
+2024-04-21 22:28:02,169 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-9] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:28:02,170 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-9] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:28:02,170 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-9] Secured POST /api/v1/auth/login
+2024-04-21 22:28:02,295 DEBUG org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider [http-nio-8080-exec-9] Authenticated user
+2024-04-21 22:28:02,391 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-9] Cleared SecurityContextHolder to complete request
+2024-04-21 22:28:29,885 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-1] Securing POST /api/v1/auth/login
+2024-04-21 22:28:29,886 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:28:29,887 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-1] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:28:29,887 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-1] Secured POST /api/v1/auth/login
+2024-04-21 22:28:29,895 DEBUG org.springframework.security.authentication.DefaultAuthenticationEventPublisher [http-nio-8080-exec-1] No event was found for the exception org.springframework.security.authentication.InternalAuthenticationServiceException
+2024-04-21 22:28:29,897 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-1] Cleared SecurityContextHolder to complete request
+2024-04-21 22:28:44,168 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-2] Securing POST /api/v1/auth/login
+2024-04-21 22:28:44,168 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:28:44,169 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-2] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:28:44,171 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-2] Secured POST /api/v1/auth/login
+2024-04-21 22:28:44,302 DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider [http-nio-8080-exec-2] Failed to authenticate since password does not match stored value
+2024-04-21 22:28:44,307 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-2] Cleared SecurityContextHolder to complete request
+2024-04-21 22:28:56,660 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-4] Securing POST /api/v1/auth/login
+2024-04-21 22:28:56,661 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-4] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:28:56,661 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-4] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:28:56,662 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-4] Secured POST /api/v1/auth/login
+2024-04-21 22:28:56,782 DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider [http-nio-8080-exec-4] Failed to authenticate since password does not match stored value
+2024-04-21 22:28:56,785 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-4] Cleared SecurityContextHolder to complete request
+2024-04-21 22:29:02,806 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8080-exec-6] Securing POST /api/v1/auth/login
+2024-04-21 22:29:02,807 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-6] Set SecurityContextHolder to empty SecurityContext
+2024-04-21 22:29:02,808 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-6] Set SecurityContextHolder to anonymous SecurityContext
+2024-04-21 22:29:02,809 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-6] Secured POST /api/v1/auth/login
+2024-04-21 22:29:02,919 DEBUG org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider [http-nio-8080-exec-6] Authenticated user
+2024-04-21 22:29:02,925 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-6] Cleared SecurityContextHolder to complete request
+2024-04-21 23:29:34,237 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47s493ms252µs).
