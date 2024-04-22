@@ -1,5 +1,6 @@
 package com.blog.controllers;
 
+import com.blog.exceptions.ResourceNotFoundException;
 import com.blog.payloads.ApiResponse;
 import com.blog.payloads.CategoryDto;
 import com.blog.payloads.PostDto;
@@ -17,8 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class PostControllerTest {
 
@@ -92,6 +92,29 @@ class PostControllerTest {
     }
 
     @Test
+    void createPost_notCreated(){
+
+        postDto.setCategory(null);
+
+        when(postService.createPost(postDto, userId, categoryId)).
+                thenThrow(new NullPointerException("Category is null"));
+
+        assertThrows(NullPointerException.class, () ->
+                postController.createPost(postDto, userId, categoryId));
+    }
+
+    @Test
+    void createPost_notFound(){
+        userId = 4;
+
+        when(postService.createPost(postDto, userId, categoryId)).
+                thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () ->
+                postController.createPost(postDto,userId, categoryId));
+    }
+
+    @Test
     void getPostsByUser() {
 
         when(postService.getPostsByUser(userId)).thenReturn(posts);
@@ -102,6 +125,17 @@ class PostControllerTest {
         assertEquals(posts.get(0).getUser().getName(), response.getBody()
                 .get(0).getUser().getName());
 
+    }
+
+    @Test
+    void getPostsByUser_notFound(){
+        userId = 4;
+
+        when(postService.getPostsByUser(userId)).
+                thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () ->
+                postController.getPostsByUser(userId));
     }
 
     @Test
@@ -117,11 +151,26 @@ class PostControllerTest {
 
     }
 
-//    @Test
-//    void getAllPost() {
-//        when(postService.getAllPost()).thenReturn(posts);
-//
-//    }
+    @Test
+    void getAllPost() {
+        when(postService.getAllPost()).thenReturn(posts);
+
+        ResponseEntity<List<PostDto>> response = postController.getAllPost();
+
+        assertEquals(posts.get(0).getTitle(), response.getBody().get(0).getTitle());
+
+    }
+
+    @Test
+    void getAllPost_notReturned(){
+
+        when(postService.getAllPost()).thenReturn(new ArrayList<>());
+
+        ResponseEntity<List<PostDto>> response = postController.getAllPost();
+
+        assertEquals(0, response.getBody().size());
+
+    }
 
     @Test
     void getPostById() {
@@ -135,6 +184,17 @@ class PostControllerTest {
     }
 
     @Test
+    void getPostById_notFound(){
+        postId = 3;
+
+        when(postService.getPostById(postId)).
+                thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () ->
+                postController.getPostById(postId));
+    }
+
+    @Test
     void deletePost() {
         postId = 1;
         doNothing().when(postService).deletePost(postId);
@@ -142,6 +202,16 @@ class PostControllerTest {
         ApiResponse response = postController.deletePost(postId);
 
         assertEquals("Post is successfully deleted !!", response.getMessage());
+    }
+
+    @Test
+    void deletePost_notDeleted(){
+
+        doThrow(new ResourceNotFoundException()).
+                when(postService).deletePost(postId);
+
+        assertThrows(ResourceNotFoundException.class, () ->
+                postController.deletePost(postId));
     }
 
     @Test
@@ -154,5 +224,31 @@ class PostControllerTest {
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("Post Title", response.getBody().getTitle());
+    }
+
+    @Test
+    void searchPostByTitle(){
+        String keyword = "Post";
+
+        when(postService.searchPosts(keyword)).thenReturn(posts);
+
+        ResponseEntity<List<PostDto>> response =
+                postController.searchPostByTitle(keyword);
+
+        assertEquals(posts.size(), response.getBody().size());
+
+    }
+
+    @Test
+    void searchPostByTitle_notFound(){
+        String keyword = "Art";
+
+        when(postService.searchPosts(keyword)).thenReturn(new ArrayList<>());
+
+        ResponseEntity<List<PostDto>> response =
+                postController.searchPostByTitle(keyword);
+
+        assertEquals(0, response.getBody().size());
+
     }
 }

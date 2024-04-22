@@ -1,9 +1,11 @@
 package com.blog.controllers;
 
+import com.blog.exceptions.ResourceNotFoundException;
 import com.blog.payloads.ApiResponse;
 import com.blog.payloads.CategoryDto;
 import com.blog.payloads.UserDto;
 import com.blog.services.CategoryService;
+import com.blog.services.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -16,8 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class CategoryControllerTest {
 
@@ -26,15 +27,28 @@ class CategoryControllerTest {
     @InjectMocks
     CategoryController categoryController;
     CategoryDto categoryDto;
+    CategoryDto categoryDto1;
+
+    int categoryId;
+    List<CategoryDto> catDtos;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        int categoryId = 1;
+        categoryId = 1;
         categoryDto = new CategoryDto();
         categoryDto.setCategoryId(1);
         categoryDto.setCategoryTitle("Category1");
         categoryDto.setCategoryDescription("Category1 description");
+
+        categoryDto1 = new CategoryDto();
+        categoryDto1.setCategoryId(2);
+        categoryDto1.setCategoryTitle("Category2");
+        categoryDto1.setCategoryDescription("Category2 description");
+
+        catDtos = new ArrayList<>();
+        catDtos.add(categoryDto);
+        catDtos.add(categoryDto1);
     }
 
     @Test
@@ -50,6 +64,18 @@ class CategoryControllerTest {
     }
 
     @Test
+    void createCategory_notCreated(){
+        categoryDto.setCategoryTitle("");
+
+        when(categoryService.createCategory(categoryDto)).thenThrow(
+                new NullPointerException("Title is null")
+        );
+
+        assertThrows(NullPointerException.class, () ->
+                categoryController.createCategory(categoryDto));
+    }
+
+    @Test
     void updateCategory() {
         int categoryId = 1;
         when(categoryService.updateCategory(categoryDto, categoryId)).thenReturn(categoryDto);
@@ -59,6 +85,29 @@ class CategoryControllerTest {
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("Category1", response.getBody().getCategoryTitle());
+    }
+
+    @Test
+    void updateCategory_notUpdated(){
+        categoryDto.setCategoryDescription("");
+
+        when(categoryService.updateCategory(categoryDto, categoryId)).
+                thenThrow(new NullPointerException("Description is null"));
+
+        assertThrows(NullPointerException.class, () ->
+                categoryController.updateCategory(categoryDto, categoryId));
+    }
+
+    @Test
+    void updateCategory_notFound(){
+
+        categoryId = 5;
+
+        when(categoryService.updateCategory(categoryDto, categoryId)).
+                thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () ->
+                categoryController.updateCategory(categoryDto, categoryId));
     }
 
     @Test
@@ -75,15 +124,18 @@ class CategoryControllerTest {
     }
 
     @Test
-    void getCategories() {
-        CategoryDto categoryDto1 = new CategoryDto();
-        categoryDto1.setCategoryId(2);
-        categoryDto1.setCategoryTitle("Category2");
-        categoryDto1.setCategoryDescription("Category2 description");
+    void deleteCategory_notFound(){
+        categoryId = 2;
 
-        List<CategoryDto> catDtos = new ArrayList<>();
-        catDtos.add(categoryDto);
-        catDtos.add(categoryDto1);
+        doThrow(ResourceNotFoundException.class).
+                when(categoryService).deleteCategory(categoryId);
+
+        assertThrows(ResourceNotFoundException.class, () ->
+                categoryController.deleteCategory(categoryId));
+    }
+
+    @Test
+    void getCategories() {
 
         when(categoryService.getCategories()).thenReturn(catDtos);
 
@@ -92,6 +144,18 @@ class CategoryControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(catDtos.get(0).getCategoryTitle(),
                 response.getBody().get(0).getCategoryTitle());
+    }
+
+    @Test
+    void getCategories_notReturned(){
+
+        when(categoryService.getCategories()).thenReturn(new ArrayList<>());
+
+        ResponseEntity<List<CategoryDto>> response =
+                categoryController.getCategories();
+
+        assertEquals(0, response.getBody().size());
+
     }
 
     @Test
@@ -106,5 +170,17 @@ class CategoryControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("Category1", response.getBody().getCategoryTitle());
 
+    }
+
+    @Test
+    void getCategory_notFound(){
+
+        categoryId = 5;
+
+        when(categoryService.getCategory(categoryId)).
+                thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () ->
+                categoryController.getCategory(categoryId));
     }
 }

@@ -18,8 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class UserControllerTest {
 
@@ -30,23 +29,18 @@ class UserControllerTest {
     UserDto userDto;
     UserDto userDto2;
 
+    int userId = 1;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        userDto =new UserDto();
-        int userId = 1;
+        userDto = new UserDto();
+        userId = 1;
         userDto.setId(userId);
         userDto.setName("John");
         userDto.setEmail("john@gmail.com");
         userDto.setPassword("pass");
         userDto.setAbout("About John");
-
-        userDto2 = new UserDto();
-        userDto2.setId(3);
-        userDto2.setName("");
-        userDto2.setEmail("john@gmail.com");
-        userDto2.setPassword("pass");
-        userDto2.setAbout("About John");
 
     }
 
@@ -62,18 +56,16 @@ class UserControllerTest {
     }
 
     @Test
-    void createUser_notCreated(){
-        when(userService.createUser(userDto2)).
+    void createUser_notCreated() {
+
+        userDto.setName("");
+        when(userService.createUser(userDto)).
                 thenThrow(new NullPointerException("Name is null"));
 
-        ResponseEntity<UserDto> response;
-        try {
-            response = userController.createUser(userDto2);
-        } catch (NullPointerException ex) {
-            assertEquals("Name is null", ex.getMessage());
-        }
+        assertThrows(NullPointerException.class, () -> {
+            userController.createUser(userDto);
+        });
     }
-
 
     @Test
     void updateUser() {
@@ -89,17 +81,27 @@ class UserControllerTest {
     }
 
     @Test
-    void updateUser_notFound(){
-        Integer userId = 4;
-        UserDto userDto3 = new UserDto();
-        userDto3.setName("Jimmy");
-        userDto3.setEmail("jimmy@example.com");
-        userDto3.setPassword("password");
-        userDto3.setAbout("About Jimmy");
+    void updateUser_notUpdated() {
 
-        assertThrows(ResourceNotFoundException.class, () -> {
-            userController.updateUser(userDto2, userId);
+        userDto.setName("");
+        when(userService.updateUser(userDto, userId)).
+                thenThrow(new NullPointerException("Name is null"));
+
+        assertThrows(NullPointerException.class, () -> {
+            userController.updateUser(userDto, userId);
         });
+    }
+
+    @Test
+    void updateUser_notFound() {
+        userId = 2;
+
+        when(userService.updateUser(userDto, userId)).
+                thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () ->
+                userController.updateUser(userDto, userId));
+
     }
 
     @Test
@@ -116,9 +118,21 @@ class UserControllerTest {
     }
 
     @Test
+    void deleteUser_notFound() {
+        userId = 2;
+
+        doThrow(ResourceNotFoundException.class).when(userService).
+                deleteUser(userId);
+
+        assertThrows(ResourceNotFoundException.class, () ->
+                userController.deleteUser(userId));
+
+    }
+
+    @Test
     void getAllUsers() {
 
-        UserDto userDto1 =new UserDto();
+        UserDto userDto1 = new UserDto();
         int userId = 2;
         userDto.setId(userId);
         userDto.setName("Jake");
@@ -140,6 +154,17 @@ class UserControllerTest {
     }
 
     @Test
+    void getAllUsers_notReturned(){
+
+        when(userService.getAllUsers()).thenReturn(new ArrayList<>());
+
+        ResponseEntity<List<UserDto>> response = userController.getAllUsers();
+
+        assertEquals(0, response.getBody().size());
+
+    }
+
+    @Test
     void getSingleUser() {
         int userId = 1;
 
@@ -150,4 +175,17 @@ class UserControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("John", response.getBody().getName());
     }
+
+
+    @Test
+    void getSingleUser_notFound() {
+        userId = 2;
+
+        when(userService.getUserById(userId)).
+                thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () ->
+                userController.getSingleUser(userId));
+    }
+
 }
