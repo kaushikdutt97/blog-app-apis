@@ -34,7 +34,7 @@ import com.blog.security.JwtAuthenticationFilter;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
-    public static final String[] PUBLIC_URLS = {"/api/v1/auth/**"};
+    public static final String[] PUBLIC_URLS = {"/api/v1/auth/**", "/v3/api-docs"};
 
     @Autowired
     private CustomUserDetailService customUserDetailService;
@@ -99,7 +99,5 @@ public class SecurityConfig {
             throws Exception {
         return configuration.getAuthenticationManager();
     }
-
-
 
 }
