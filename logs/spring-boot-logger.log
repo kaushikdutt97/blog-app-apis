@@ -506,3 +506,103 @@ Caused by: java.lang.ClassNotFoundException: com.blog.repositories.RoleRepo
 2024-04-24 12:42:25,504 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8080-exec-10] Set SecurityContextHolder to anonymous SecurityContext
 2024-04-24 12:42:25,505 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8080-exec-10] Secured GET /v2/api-docs
 2024-04-24 12:42:25,554 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8080-exec-10] Cleared SecurityContextHolder to complete request
+2024-04-24 13:03:14,823 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-24 13:03:14,827 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-04-24 13:03:14,836 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-04-24 13:03:22,819 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 1924 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-24 13:03:22,820 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-24 13:03:22,821 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-24 13:03:22,822 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-24 13:03:22,839 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-24 13:03:22,840 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-24 13:03:22,958 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.context.MissingWebServerFactoryBeanException: No qualifying bean of type 'org.springframework.boot.web.servlet.server.ServletWebServerFactory' available: Unable to start AnnotationConfigServletWebServerApplicationContext due to missing ServletWebServerFactory bean
+2024-04-24 13:03:23,208 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web application could not be started as there was no org.springframework.boot.web.servlet.server.ServletWebServerFactory bean defined in the context.
+
+Action:
+
+Check your application's dependencies for a supported servlet web server.
+Check the configured web application type.
+
+2024-04-24 13:05:25,864 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-24 13:05:25,865 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 10620 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-24 13:05:25,866 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-24 13:05:25,867 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-24 13:05:25,888 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-24 13:05:25,889 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-24 13:05:25,999 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.context.MissingWebServerFactoryBeanException: No qualifying bean of type 'org.springframework.boot.web.servlet.server.ServletWebServerFactory' available: Unable to start AnnotationConfigServletWebServerApplicationContext due to missing ServletWebServerFactory bean
+2024-04-24 13:05:26,286 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web application could not be started as there was no org.springframework.boot.web.servlet.server.ServletWebServerFactory bean defined in the context.
+
+Action:
+
+Check your application's dependencies for a supported servlet web server.
+Check the configured web application type.
+
+2024-04-24 13:09:06,073 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-24 13:09:06,078 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 12964 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-24 13:09:06,079 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-24 13:09:06,080 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-24 13:09:06,103 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-24 13:09:06,104 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-24 13:09:06,244 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.context.MissingWebServerFactoryBeanException: No qualifying bean of type 'org.springframework.boot.web.servlet.server.ServletWebServerFactory' available: Unable to start AnnotationConfigServletWebServerApplicationContext due to missing ServletWebServerFactory bean
+2024-04-24 13:09:06,884 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web application could not be started as there was no org.springframework.boot.web.servlet.server.ServletWebServerFactory bean defined in the context.
+
+Action:
+
+Check your application's dependencies for a supported servlet web server.
+Check the configured web application type.
+
+2024-04-24 13:12:48,508 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2024-04-24 13:12:48,518 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting BlogAppApisApplication using Java 17.0.7 on GEMGN-220270 with PID 13048 (C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main\target\classes started by Kaushik.Dwivedi in C:\Users\kaushik.dwivedi\Documents\workspace-spring-tool-suite-4-4.22.0.RELEASE\Backend-Course-Blogging-Application-main)
+2024-04-24 13:12:48,519 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.2, Spring v5.3.22
+2024-04-24 13:12:48,520 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-04-24 13:12:48,587 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-24 13:12:48,588 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-24 13:12:49,906 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-24 13:12:49,993 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 78 ms. Found 5 JPA repository interfaces.
+2024-04-24 13:12:51,242 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2024-04-24 13:12:51,259 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-24 13:12:51,260 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-04-24 13:12:51,260 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-04-24 13:12:51,385 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-04-24 13:12:51,386 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2798 ms
+2024-04-24 13:12:51,679 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-24 13:12:51,741 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2024-04-24 13:12:51,974 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-04-24 13:12:52,117 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-04-24 13:12:52,509 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-04-24 13:12:52,528 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-04-24 13:12:53,437 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-04-24 13:12:53,444 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-24 13:12:53,903 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'jwtAuthenticationFilter' configured for use
+2024-04-24 13:12:54,370 DEBUG org.springframework.security.access.prepost.PrePostAnnotationSecurityMetadataSource [restartedMain] @org.springframework.security.access.prepost.PreAuthorize("hasRole(\'ADMIN\')") found on specific method: public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)
+2024-04-24 13:12:54,397 DEBUG org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource [restartedMain] Caching method [CacheKey[com.blog.controllers.UserController; public org.springframework.http.ResponseEntity com.blog.controllers.UserController.deleteUser(java.lang.Integer)]] with attributes [[authorize: 'hasRole('ADMIN')', filter: 'null', filterTarget: 'null']]
+2024-04-24 13:12:54,765 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-24 13:12:55,046 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@17c4899b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e6a808f, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a52115, org.springframework.security.web.header.HeaderWriterFilter@3847f78a, org.springframework.security.web.authentication.logout.LogoutFilter@51edb9ec, com.blog.security.JwtAuthenticationFilter@604b5247, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24e5d46a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c116bd1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ded8f7e, org.springframework.security.web.session.SessionManagementFilter@1c06f571, org.springframework.security.web.access.ExceptionTranslationFilter@6191910c, org.springframework.security.web.access.intercept.AuthorizationFilter@30553c50]
+2024-04-24 13:12:55,151 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-04-24 13:12:55,544 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-04-24 13:12:55,580 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-24 13:12:56,077 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started BlogAppApisApplication in 8.308 seconds (JVM running for 9.23)
