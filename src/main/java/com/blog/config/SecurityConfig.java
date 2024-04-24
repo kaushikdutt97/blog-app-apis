@@ -34,7 +34,8 @@ import com.blog.security.JwtAuthenticationFilter;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
-    public static final String[] PUBLIC_URLS = {"/api/v1/auth/**", "/v3/api-docs"};
+    public static final String[] PUBLIC_URLS = {"/api/v1/auth/**", "/v3/api-docs",
+            "/v2/api-docs", "/swagger-resources/**", "/swagger-ui/**", "/webjars/**"};
 
     @Autowired
     private CustomUserDetailService customUserDetailService;

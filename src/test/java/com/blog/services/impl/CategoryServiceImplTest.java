@@ -1,7 +1,9 @@
 package com.blog.services.impl;
 
 import com.blog.entities.Category;
+import com.blog.exceptions.ResourceNotFoundException;
 import com.blog.payloads.CategoryDto;
+import com.blog.payloads.UserDto;
 import com.blog.repositories.CategoryRepo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -76,6 +78,12 @@ class CategoryServiceImplTest {
         categoryDtos = new ArrayList<>();
         categoryDtos.add(categoryDto);
         categoryDtos.add(categoryDto2);
+
+        when(categoryService.categoryToDto(category)).thenReturn(categoryDto);
+        when(categoryService.dtoToCategory(categoryDto)).thenReturn(category);
+
+        when(categoryService.categoryToDto(category2)).thenReturn(categoryDto2);
+        when(categoryService.dtoToCategory(categoryDto2)).thenReturn(category2);
     }
 
     @Test
@@ -83,8 +91,6 @@ class CategoryServiceImplTest {
 
 
         when(categoryRepo.save(category)).thenReturn(category);
-        when(categoryService.categoryToDto(category)).thenReturn(categoryDto);
-        when(categoryService.dtoToCategory(categoryDto)).thenReturn(category);
 
         CategoryDto resultCatDto = categoryService.createCategory(categoryDto);
 
@@ -93,17 +99,38 @@ class CategoryServiceImplTest {
     }
 
     @Test
+    void createCategory_notCreated(){
+        categoryDto.setCategoryTitle("");
+        category.setCategoryTitle(categoryDto.getCategoryTitle());
+
+        when(categoryRepo.save(category)).
+                thenThrow(new NullPointerException("Title is null"));
+
+        assertThrows(NullPointerException.class, () ->
+                categoryService.createCategory(categoryDto));
+    }
+
+    @Test
     void updateCategory() {
 
         categoryId = 1;
         when(categoryRepo.findById(categoryId)).thenReturn(Optional.of(category));
         when(categoryRepo.save(category)).thenReturn(category);
-        when(categoryService.categoryToDto(category)).thenReturn(categoryDto);
-        when(categoryService.dtoToCategory(categoryDto)).thenReturn(category);
 
         CategoryDto resultCatDto = categoryService.updateCategory(categoryDto, categoryId);
 
         assertEquals(categoryDto.getCategoryId(), resultCatDto.getCategoryId());
+    }
+
+    @Test
+    public void updateUser_NotFound() {
+        categoryId = 4;
+
+        when(categoryRepo.findById(categoryId)).thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            categoryService.updateCategory(categoryDto, categoryId);
+        });
     }
 
     @Test
@@ -116,16 +143,37 @@ class CategoryServiceImplTest {
     }
 
     @Test
+    void deleteCategory_notDeleted(){
+        categoryId = 4;
+
+        when(categoryRepo.findById(categoryId)).thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            categoryService.deleteCategory(categoryId);
+        });
+    }
+
+    @Test
     void getCategory() {
 
         when(categoryRepo.findById(categoryId)).thenReturn(Optional.of(category));
-        when(categoryService.categoryToDto(category)).thenReturn(categoryDto);
 
         CategoryDto resultCatDto = categoryService.getCategory(categoryId);
 
         assertEquals(categoryDto.getCategoryId(), resultCatDto.getCategoryId());
     }
 
+    @Test
+    void getCategory_notFound(){
+
+        categoryId = 4;
+
+        when(categoryRepo.findById(categoryId)).thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            categoryService.getCategory(categoryId);
+        });
+    }
     @Test
     void getCategories() {
 
@@ -138,6 +186,17 @@ class CategoryServiceImplTest {
 
         assertEquals(categoryDtos.get(1).getCategoryTitle(),
                 resultCategoryDtos.get(1).getCategoryTitle());
+    }
+
+    @Test
+    void getAllCategories_notReturned() {
+
+        when(categoryRepo.findAll()).thenReturn(new ArrayList<>());
+
+        List<CategoryDto> response = categoryService.getCategories();
+
+        assertEquals(0, response.size());
+
     }
 
 }

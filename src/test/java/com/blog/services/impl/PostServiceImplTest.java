@@ -3,6 +3,7 @@ package com.blog.services.impl;
 import com.blog.entities.Category;
 import com.blog.entities.Post;
 import com.blog.entities.User;
+import com.blog.exceptions.ResourceNotFoundException;
 import com.blog.payloads.CategoryDto;
 import com.blog.payloads.PostDto;
 import com.blog.payloads.UserDto;
@@ -21,7 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class PostServiceImplTest {
 
@@ -35,9 +36,15 @@ class PostServiceImplTest {
     private ModelMapper modelMapper;
     @InjectMocks
     private PostServiceImpl postService;
+    @InjectMocks
+    private CategoryServiceImpl categoryService;
+    @InjectMocks
+    private UserServiceImpl userService;
 
     PostDto postDto;
+    PostDto postDto1;
     Post post;
+    Post post1;
     CategoryDto categoryDto;
     Category category;
     UserDto userDto;
@@ -99,15 +106,44 @@ class PostServiceImplTest {
         post.setCategory(category);
         post.setUser(user);
 
+        postId = 2;
+        postDto1 = new PostDto();
+        postDto1.setPostId(postId);
+        postDto1.setTitle("Post Title1");
+        postDto1.setContent("Post Content1");
+        postDto1.setImageName("default1.png");
+        postDto1.setAddedDate(null);
+        postDto1.setCategory(categoryDto);
+        postDto1.setUser(userDto);
+
+        post1 = new Post();
+        post1.setPostId(postDto.getPostId());
+        post1.setTitle(postDto.getTitle());
+        post1.setContent(postDto.getContent());
+        post1.setImageName(postDto.getImageName());
+        post1.setAddedDate(postDto.getAddedDate());
+        post1.setCategory(category);
+        post1.setUser(user);
+
         posts = new ArrayList<>();
         posts.add(post);
+        posts.add(post1);
+
+        when(categoryService.categoryToDto(category)).thenReturn(categoryDto);
+        when(categoryService.dtoToCategory(categoryDto)).thenReturn(category);
+
+        when(userService.dtoToUser(userDto)).thenReturn(user);
+        when(userService.userToDto(user)).thenReturn(userDto);
+
+        when(postService.postToDto(post)).thenReturn(postDto);
+        when(postService.dtoToPost(postDto)).thenReturn(post);
+
+        when(postService.postToDto(post1)).thenReturn(postDto1);
+        when(postService.dtoToPost(postDto1)).thenReturn(post1);
     }
 
     @Test
     void createPost() {
-
-        when(postService.postToDto(post)).thenReturn(postDto);
-        when(postService.dtoToPost(postDto)).thenReturn(post);
 
         when(userRepo.findById(userId)).thenReturn(Optional.of(user));
         when(categoryRepo.findById(categoryId)).thenReturn(Optional.of(category));
@@ -121,10 +157,36 @@ class PostServiceImplTest {
     }
 
     @Test
-    void updatePost() {
+    void createPost_UserNotFound() {
 
-        when(postService.postToDto(post)).thenReturn(postDto);
-        when(postService.dtoToPost(postDto)).thenReturn(post);
+        when(userRepo.findById(userId)).
+                thenThrow(new ResourceNotFoundException());
+
+        when(categoryRepo.findById(categoryId)).thenReturn(Optional.of(category));
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            postService.createPost(postDto, userId, categoryId);
+        });
+    }
+
+    @Test
+    void createPost_CategoryNotFound() {
+
+        categoryId = 7;
+
+        when(userRepo.findById(userId)).thenReturn(Optional.of(user));
+
+        when(categoryRepo.findById(categoryId)).
+                thenThrow(new ResourceNotFoundException());
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            postService.createPost(postDto, userId, categoryId);
+        });
+    }
+
+
+    @Test
+    void updatePost() {
 
         when(categoryRepo.findById(categoryId)).thenReturn(Optional.of(category));
         when(postRepo.findById(postId)).thenReturn(Optional.of(post));
@@ -136,8 +198,50 @@ class PostServiceImplTest {
     }
 
     @Test
-    void deletePost() {
+    void updatePost_PostNotFound() {
+        postId = 9;
+
+        when(postRepo.findById(postId)).thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            postService.updatePost(postDto, postId);
+        });
     }
+
+    @Test
+    void updatePost_CategoryNotFound() {
+        postDto.getCategory().setCategoryId(6);
+
+        when(categoryRepo.findById(postDto.getCategory().getCategoryId())).
+                thenThrow(new ResourceNotFoundException());
+        when(postRepo.findById(postId)).thenReturn(Optional.of(post));
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            postService.updatePost(postDto, postId);
+        });
+    }
+
+
+    @Test
+    void deletePost() {
+
+        when(postRepo.findById(postId)).thenReturn(Optional.of(post));
+
+        postService.deletePost(postId);
+
+        verify(postRepo, times(1)).delete(post);
+
+    }
+
+    @Test
+    void deletePost_PostNotFound() {
+        when(postRepo.findById(postId)).thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            postService.deletePost(postId);
+        });
+    }
+
 
     @Test
     void getAllPost() {
@@ -145,8 +249,20 @@ class PostServiceImplTest {
 
         List<PostDto> response = postService.getAllPost();
 
-        assertEquals(posts.get(0).getCategory(), response.get(0).getCategory());
+        assertEquals(posts.get(0).getImageName(), response.get(0).getImageName());
+        assertEquals(posts.get(0).getCategory().getCategoryTitle(),
+                response.get(0).getCategory().getCategoryTitle());
     }
+
+    @Test
+    void getAllPost_NoPostsFound() {
+        when(postRepo.findAll()).thenReturn(new ArrayList<>());
+
+        List<PostDto> response = postService.getAllPost();
+
+        assertEquals(0, response.size());
+    }
+
 
     @Test
     void getPostById() {
@@ -158,6 +274,16 @@ class PostServiceImplTest {
 
         assertEquals(post.getPostId(), resultPost.getPostId());
     }
+
+    @Test
+    void getPostById_PostNotFound() {
+        when(postRepo.findById(postId)).thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            postService.getPostById(postId);
+        });
+    }
+
 
     @Test
     void getPostsByCategory() {
@@ -173,6 +299,16 @@ class PostServiceImplTest {
     }
 
     @Test
+    void getPostsByCategory_CategoryNotFound() {
+        when(categoryRepo.findById(categoryId)).thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            postService.getPostsByCategory(categoryId);
+        });
+    }
+
+
+    @Test
     void getPostsByUser() {
         userId = 2;
 
@@ -182,5 +318,15 @@ class PostServiceImplTest {
         List<PostDto> response = postService.getPostsByUser(userId);
 
         assertEquals(posts.get(0).getTitle(), response.get(0).getTitle());
+    }
+
+
+    @Test
+    void getPostsByUser_UserNotFound() {
+        when(userRepo.findById(userId)).thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class, () -> {
+            postService.getPostsByUser(userId);
+        });
     }
 }
