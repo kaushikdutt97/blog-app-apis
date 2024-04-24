@@ -13,5 +13,6 @@ class BlogAppApisApplicationTests {
 
 	}
 
-
+//all serviceimpltests, commentcontrollertest, swaggerconfig, securityconfig,
+//commentserviceimpl
 }

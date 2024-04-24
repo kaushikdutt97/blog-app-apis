@@ -65,7 +65,7 @@ public class SecurityConfig {
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        
+
         http.addFilterBefore
                 (this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
@@ -96,7 +96,7 @@ public class SecurityConfig {
 
     @Bean
     public AuthenticationManager authenticationManagerBean(AuthenticationConfiguration
-                                                                       configuration)
+                                                                   configuration)
             throws Exception {
         return configuration.getAuthenticationManager();
     }

@@ -1,5 +1,7 @@
 package com.blog.services.impl;
 
+import com.blog.entities.User;
+import com.blog.payloads.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,16 @@ public class CommentServiceImpl implements CommentService {
 	@Autowired
 	private ModelMapper modelMapper;
 
+	public Comment dtoToComment(CommentDto commentDto) {
+
+		return this.modelMapper.map(commentDto, Comment.class);
+	}
+
+	public CommentDto commentToDto(Comment comment) {
+
+		return this.modelMapper.map(comment, CommentDto.class);
+	}
+
 	@Override
 	public CommentDto createComment(CommentDto commentDto, Integer postId) {
 		log.info("Creating comment for post with ID {}", postId);
@@ -36,11 +48,11 @@ public class CommentServiceImpl implements CommentService {
 					return new ResourceNotFoundException("Post", "post id ", postId);
 				});
 
-		Comment comment = this.modelMapper.map(commentDto, Comment.class);
+		Comment comment = this.dtoToComment(commentDto);
 		comment.setPost(post);
 
 		Comment savedComment = this.commentRepo.save(comment);
-		return this.modelMapper.map(savedComment, CommentDto.class);
+		return this.commentToDto(savedComment);
 	}
 
 	@Override
