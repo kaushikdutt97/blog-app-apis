@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,12 +31,18 @@ public class CategoryController {
 
 	// create
 
+	/**
+	 * Used to create category
+	 * @param categoryDto
+	 * @return
+	 */
 	@PostMapping("/")
-	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto cateogDto) {
+	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody
+														  CategoryDto categoryDto) {
 
-		log.info("Creating category: {}", cateogDto);
+		log.info("Creating category: {}", categoryDto);
 
-		CategoryDto createCategory = this.categoryService.createCategory(cateogDto);
+		CategoryDto createCategory = this.categoryService.createCategory(categoryDto);
 
 		log.info("Category created successfully: {}", createCategory);
 
